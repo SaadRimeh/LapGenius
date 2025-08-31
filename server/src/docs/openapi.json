@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "LapGenius API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "http://localhost:5000/api" }
+  ],
+  "paths": {
+    "/laptop": {
+      "get": {
+        "summary": "List laptops",
+        "responses": { "200": { "description": "OK" } }
+      },
+      "post": {
+        "summary": "Create laptop",
+        "responses": { "201": { "description": "Created" } }
+      }
+    },
+    "/laptop/{id}": {
+      "get": { "summary": "Get laptop", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" }, "404": { "description": "Not found" } } },
+      "put": { "summary": "Update laptop", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } },
+      "delete": { "summary": "Delete laptop", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "204": { "description": "No content" } } }
+    },
+    "/client": {
+      "get": { "summary": "List clients", "responses": { "200": { "description": "OK" } } },
+      "post": { "summary": "Create client", "responses": { "201": { "description": "Created" } } }
+    },
+    "/client/{id}": {
+      "get": { "summary": "Get client", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" }, "404": { "description": "Not found" } } },
+      "put": { "summary": "Update client", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } },
+      "delete": { "summary": "Delete client", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "204": { "description": "No content" } } }
+    },
+    "/order": {
+      "get": { "summary": "List orders", "responses": { "200": { "description": "OK" } } },
+      "post": { "summary": "Create order", "responses": { "201": { "description": "Created" } } }
+    },
+    "/order/{id}": {
+      "get": { "summary": "Get order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" }, "404": { "description": "Not found" } } },
+      "put": { "summary": "Update order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } },
+      "delete": { "summary": "Delete order", "parameters": [{"name":"id","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "204": { "description": "No content" } } }
+    },
+    "/submit": {
+      "get": { "summary": "List suggestions", "responses": { "200": { "description": "OK" } } },
+      "post": { "summary": "Create suggestion", "responses": { "201": { "description": "Created" } } }
+    },
+    "/cart/{clientId}": {
+      "get": { "summary": "Get cart", "parameters": [{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } }
+    },
+    "/cart/{clientId}/add": {
+      "post": { "summary": "Add to cart", "parameters": [{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } }
+    },
+    "/cart/{clientId}/checkout": {
+      "post": { "summary": "Checkout cart", "parameters": [{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}], "responses": { "200": { "description": "OK" } } }
+    }
+  }
+}
+
+
