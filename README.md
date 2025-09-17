@@ -67,7 +67,7 @@ A modern, full-stack e-commerce platform for laptops built with React, Node.js, 
    Create a `.env` file in the server directory:
    ```env
    PORT=5001
-   MONGO_URL=mongodb://127.0.0.1:27017/lapgenius
+   MONGO_URL=mongodb:/x.x.x.x:27017/lapgenius
    JWT_SECRET=your_jwt_secret_here
    ```
 
